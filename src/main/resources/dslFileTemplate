@@ -1,0 +1,30 @@
+package dsl
+
+def projectName    = args.projectName
+def procedureName  = args.procedureName
+def params         = args.params
+def resourceName   = args.resourceName
+def stepName       = args.stepName
+def subprojectName = args.subprojectName
+
+project projectName, {
+    procedure procedureName, {
+        resourceName = resourceName
+
+        step stepName, {
+            description = ''
+            subprocedure = procedureName
+            subproject = '/plugins/' + subprojectName + '/project'
+
+            params.each { name, defValue ->
+                actualParameter name, '$[' + name + ']'
+            }
+        }
+
+        params.each {name, defValue ->
+            formalParameter name, defaultValue: defValue, {
+                type = 'textarea'
+            }
+        }
+    }
+}

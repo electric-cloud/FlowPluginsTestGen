@@ -1,0 +1,33 @@
+package com.electriccloud.plugin.specFOLDER
+
+
+import com.electriccloud.plugins.annotations.NewFeature
+import com.electriccloud.plugins.annotations.Sanity
+import spock.lang.Unroll
+
+class TESTCLASSNAME{
+
+    static def procedureName = 'PROCEDURENAME'
+    static def efProjectName = 'PROJECTNAME'
+    static def resName = 'local'
+
+    static def RUNPARAMATERS
+
+    static def TESTCASES
+
+SHARED_PARAMS
+
+    def doSetupSpec() {
+        createConfiguration(CONFIG_NAME)
+        // TODO: check names of parameters in procedure with names in dsl
+        dslFile "dsl/procedure.dsl", [projectName: efProjectName, resName: resName, procedureName: procedureName, params: runParameters]
+    }
+
+    def doCleanupSpec() {
+        deleteConfiguration(PLUGIN_NAME, CONFIG_NAME)
+        conditionallyDeleteProject(efProjectName)
+    }
+
+SPECBLOCKS
+
+}

@@ -1,0 +1,62 @@
+testRail:
+  username: 'eserbin@cloudbees.com'
+  password: 'AsdfQwe!'
+testsFolder: 'testQaFolder'
+# parentClass: 'PluginSpockTestSupport'
+# Provide parent class for all procedures
+parentClass: 'PluginTestHelper'
+procedures:
+  # name of groovy class and groovy file
+  RunPlan:
+    # name of plugin procedure, if it isn't provided, value will be taken from groovy class
+    procedureName:  "RunPlan"
+    # name of project which will be created in cloudbees Flow and used for running procedures
+    projectName: 'TestProject: RunPlan'
+    # set sharedParameters to "true" to make all parameters "@Shared"
+    sharedParameters: true
+    # list of plugin procedure parameters
+    parameters:
+      - "config"
+      - "customRevision"
+      - "projectKey"
+      - "planKey"
+      - "waitForBuild"
+      - "waitTimeout"
+      - "additionalBuildVariables"
+      - "resultFormat"
+      - "resultPropertySheet"
+    # block which is responsible for testcases
+    testCases:
+      # if generate is set to 'yes', testcases will be generate in TestRail
+      # in this case sectionId, count are mandatory values, ids - will be ignored
+      #      generate: 'yes'
+      generate: true
+      # sectionId - precreated section id in testrail
+      sectionId: '105338'
+      # count of test-cases which will be generated in TestRail
+      count: 2
+      # if generate isn't set to 'yes', test-cases ids will be taken from list 'ids'
+      ids:
+        - '000001'
+        - '000002'
+    # Provide parent class for procedure, will override
+    parentClass: 'PluginTestHelper'
+  # second procedure ...
+  CreateRelease:
+    #    procedureName: 'CreateRelease'
+    sharedParameters: false
+    parameters:
+      - "config"
+      - "deploymentProjectName"
+      - "planBuildKey"
+      - "releaseName"
+      - "requestReleaseName"
+      - "resultFormat"
+      - "resultPropertySheet"
+    testCases:
+      generate: false
+      sectionId: '105288'
+      count: 3
+      ids:
+        - '000001'
+        - '000002'
