@@ -1,4 +1,4 @@
-package com.electriccloud.plugin.specFOLDER
+package com.cloudbees.plugin.specFOLDER
 
 
 import com.electriccloud.plugins.annotations.NewFeature

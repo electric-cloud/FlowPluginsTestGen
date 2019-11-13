@@ -10,7 +10,7 @@ class GenerateTests {
     static def testRailUserName = "CHANGEME@electric-cloud.com"
     static def testRailPassword = "CHANGEME"
     static def yamlFile = "testConfig/testspec.yaml"
-    static def defaultSpecFolder = "specs/src/test/groovy/com/electriccloud/plugin/spec"
+    static def defaultSpecFolder = "specs/src/test/groovy/com/cloudbees/plugin/spec"
     static def testFileTemplate = "/testFileTemplate"
     static def extraParametersInWhereTable = ['expectedOutcome', 'expectedSummary']
 
