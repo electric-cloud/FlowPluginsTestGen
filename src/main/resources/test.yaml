@@ -1,6 +1,6 @@
 testRail:
-  username: 'eserbin@cloudbees.com'
-  password: 'AsdfQwe!'
+  username: 'your@email'
+  password: 'password'
 testsFolder: 'testQaFolder'
 # parentClass: 'PluginSpockTestSupport'
 # Provide parent class for all procedures
