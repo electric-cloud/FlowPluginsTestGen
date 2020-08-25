@@ -14,3 +14,4 @@ EC-Kubectl
 ```
 6. launch cli tool (./FlowPluginsTestGen/build/distributions/FlowPluginsTestGen-1.0-SNAPSHOT/bin/FlowPluginsTestGen) from plugin directory
 7.
+8.
